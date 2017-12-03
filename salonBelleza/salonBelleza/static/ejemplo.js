@@ -35,9 +35,9 @@ function actualizarTabla(){
     ]
   });
 }
-   $(".actualizar").click(function(){
+   //$(".actualizar").click(function(){
      actualizarTabla();
-   });
+   //});
 
    $("#tablaprueba").on("click","button.eliminar", function(){
      var url = "/cliente/eliminacion";
