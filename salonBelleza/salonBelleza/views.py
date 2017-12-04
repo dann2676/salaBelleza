@@ -3,7 +3,7 @@ from django.contrib import auth
 from django.http import HttpResponseRedirect
 
 def bienvenida(request):
-	return render(request, 'bienvenida.html',{'mensaje':'Bienvenidos a ECO'})
+	return render(request, 'bienvenida.html',{'mensaje':'Bienvenidos'})
 def principal(request):
 	print(request.user)
 	if request.user.is_authenticated():

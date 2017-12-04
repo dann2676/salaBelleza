@@ -10,5 +10,7 @@ urlpatterns = [
 	url(r'^actualizar$',views.actualizar),
 	url(r'^eliminacion$', views.eliminar),
 	url(r'^update$', views.update),
-	url(r'^fupdate/(\d+)', views.fupdate)
+	url(r'^fupdate/(\d+)', views.fupdate),
+	url(r'^enviarCorreo$', views.correo),
+	url(r'^enviar$', views.enviar)
 ]

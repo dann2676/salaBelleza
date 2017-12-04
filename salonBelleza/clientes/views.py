@@ -1,13 +1,24 @@
 from django.shortcuts import render
 from clientes.models import Cliente
+from salonBelleza import settings
 from django.http import HttpResponse, HttpResponseRedirect
 import json
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
 
 # Create your views here.
 def clientes(request):
 	return render(request, 'bienvenida.html', {'mensaje':'cliente'})
 
+def correo (request):
+	return render(request, 'correo.html')
+def enviar (request):
+
+	m=request.GET["mensaje"]
+	a=request.GET["asunto"]
+	c= request.GET["cor"]
+	send_mail(a, m, settings.EMAIL_HOST_USER, [c], fail_silently=False)
+	return render(request, 'principal.html')
 def newCliente(request):
 
 		return render(request, 'addcliente.html')
