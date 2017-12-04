@@ -31,7 +31,8 @@ function actualizarTabla(){
       {"data":"nombre"},
       {"data":"correo"},
       {"data":"botonE"},
-      {"data":"botonA"}
+      {"data":"botonA"},
+      {"data":"botonC"}
     ]
   });
 }
@@ -55,6 +56,11 @@ function actualizarTabla(){
    $("#tablaprueba").on("click","button.act", function(){
      var x=$(this).attr("id");
      var url = "/cliente/fupdate/"+x;
+     location.href=url;
+   });
+   $("#tablaprueba").on("click","button.act", function(){
+     var x=$(this).attr("id");
+     var url = "/cliente/enviarCorreo/"+x;
      location.href=url;
    });
 });

@@ -10,8 +10,9 @@ from django.core.mail import send_mail
 def clientes(request):
 	return render(request, 'bienvenida.html', {'mensaje':'cliente'})
 
-def correo (request):
-	return render(request, 'correo.html')
+def correo (request, cid):
+	cli=Cliente.objects.get(pk=cid)
+	return render(request, 'correo.html', {'datos':cli})
 def enviar (request):
 
 	m=request.GET["mensaje"]
@@ -64,5 +65,6 @@ def actualizar(request):
 	for i in cli:
 		cli2.append({"nombre":i.nombre+" "+i.apellido, "cedula":i.cedula,
 		"correo":i.correo, "botonE":"<button id=\""+str(i.pk)+"\" class=\"eliminar btn btn-danger\"><span class=\"glyphicon glyphicon-trash\"></span></button>",
-		"botonA":"<button id=\""+str(i.pk)+"\" class=\"act btn btn-success\"><span class=\"glyphicon glyphicon-refresh\"></span></button>"})
+		"botonA":"<button id=\""+str(i.pk)+"\" class=\"act btn btn-success\"><span class=\"glyphicon glyphicon-refresh\"></span></button>",
+		"botonC":"<button id=\""+str(i.pk)+"\" class=\"correo btn btn-success\"><span class=\"glyphicon glyphicon-refresh\"></span></button>"})
 	return HttpResponse(json.dumps({"data":cli2}), content_type="aplication/json")

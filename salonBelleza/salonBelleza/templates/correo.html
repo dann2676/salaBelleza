@@ -4,7 +4,8 @@
 
 {% block content %}
 <form method="get" action="enviar">{% csrf_token %}
-correo:  <input type="text" class="form-control" name="cor" id="cor" required>
+correo:  <input type="text" class="form-control" name="cor" id="cor" value={{datos.correo}}>
+
 asunto:  <input type="text" class="form-control" name="asunto" id="asunto" required>
 <textarea name="mensaje" id ="mensaje"></textarea>
 <input type="submit" class="btn btn-default" value="Enviar">
