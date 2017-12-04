@@ -59,7 +59,7 @@ function actualizarTabla(){
      var url = "/cliente/fupdate/"+x;
      location.href=url;
    });
-   $("#tablaprueba").on("click","button.act", function(){
+   $("#tablaprueba").on("click","button.correo", function(){
      var x=$(this).attr("id");
      var url = "/cliente/enviarCorreo/"+x;
      location.href=url;

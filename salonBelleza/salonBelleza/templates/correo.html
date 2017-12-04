@@ -3,7 +3,7 @@
 {% block title %}Envio de Correos{% endblock %}
 
 {% block content %}
-<form method="get" action="enviar">{% csrf_token %}
+<form method="get" action="/cliente/enviar">{% csrf_token %}
 correo:  <input type="text" class="form-control" name="cor" id="cor" value={{datos.correo}}>
 
 asunto:  <input type="text" class="form-control" name="asunto" id="asunto" required>

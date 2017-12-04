@@ -12,5 +12,5 @@ urlpatterns = [
 	url(r'^update$', views.update),
 	url(r'^fupdate/(\d+)', views.fupdate),
 	url(r'^enviarCorreo/(\d+)', views.correo),
-	url(r'^enviar$', views.enviar)
+	url(r'^enviarCorreo/enviar$', views.enviar)
 ]
