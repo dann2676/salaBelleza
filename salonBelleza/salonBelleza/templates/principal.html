@@ -3,8 +3,11 @@
 {% block title %}Bienvenido{% endblock %}
 
 {% block content %}
-<div>
-<a href="/cliente/nuevoCliente">Agregar Cliente</a>
-<a href="/cliente/mostrarClientes">Mostrar Clientes</a>
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <a class="btn btn-primary" style="font-size: 45px;" href="/cliente/nuevoCliente">Nuevo <span class="glyphicon glyphicon-plus-sign"></span></a>
+    <a class="btn btn-warning" style="font-size: 45px;" href="/cliente/mostrarClientes">Clientes <span class="glyphicon glyphicon-search"></span></a>
+  </div>
 </div>
 {% endblock %}
