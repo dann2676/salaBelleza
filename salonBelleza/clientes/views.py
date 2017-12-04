@@ -63,8 +63,8 @@ def actualizar(request):
 	cli =Cliente.objects.all()
 	cli2=[]
 	for i in cli:
-		cli2.append({"nombre":i.nombre+" "+i.apellido, "cedula":i.cedula,
-		"correo":i.correo, "botonE":"<button id=\""+str(i.pk)+"\" class=\"eliminar btn btn-danger\"><span class=\"glyphicon glyphicon-trash\"></span></button>",
+		cli2.append({"nombre":i.nombre+" "+i.apellido, "cedula":i.cedula,"correo":i.correo,
+		"botonE":"<button id=\""+str(i.pk)+"\" class=\"eliminar btn btn-danger\"><span class=\"glyphicon glyphicon-trash\"></span></button>",
 		"botonA":"<button id=\""+str(i.pk)+"\" class=\"act btn btn-success\"><span class=\"glyphicon glyphicon-refresh\"></span></button>",
-		"botonC":"<button id=\""+str(i.pk)+"\" class=\"correo btn btn-success\"><span class=\"glyphicon glyphicon-refresh\"></span></button>"})
+		"botonC":"<button id=\""+str(i.pk)+"\" class=\"correo\">C</button>"})
 	return HttpResponse(json.dumps({"data":cli2}), content_type="aplication/json")

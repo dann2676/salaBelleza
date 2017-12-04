@@ -26,13 +26,14 @@ function actualizarTabla(){
   $("#tablaprueba").dataTable({
     "ajax":{url:"/cliente/actualizar"},
     "destroy":true,
+
     "columns":[
       {"data":"cedula"},
       {"data":"nombre"},
       {"data":"correo"},
-      {"data":"botonE"},
+      {"data":"botonC"},
       {"data":"botonA"},
-      {"data":"botonC"}
+      {"data":"botonE"}
     ]
   });
 }
